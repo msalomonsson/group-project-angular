@@ -1,0 +1,22 @@
+.container{
+    
+    
+    .mat-toolbar{
+        display: flex;
+        justify-content: space-around;
+        
+    
+        a{
+            color: white;
+            text-decoration: none;
+        }
+    
+        i{
+            
+        }
+    
+        .active{
+            background-color: rgb(230, 6, 6);
+        }
+    }
+}

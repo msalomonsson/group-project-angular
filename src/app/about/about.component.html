@@ -1,0 +1,19 @@
+<div class="container">
+
+    <mat-card class="card" *ngFor="let personal of personals" >
+        <mat-card-header>
+            
+            <img mat-card-avatar class="header-img" src="{{personal.image}}" alt="">
+            
+            <mat-card-title>{{personal.name}}</mat-card-title>
+            <mat-card-subtitle>{{personal.abbr}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <p>
+              {{personal.description}}
+            </p>
+            <i class="fas fa-phone"></i>
+          </mat-card-content>
+    </mat-card>
+</div>
+

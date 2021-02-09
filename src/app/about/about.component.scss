@@ -1,0 +1,38 @@
+.container{
+    max-width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+
+    // .hero{
+    //     min-width: 100%;
+    //     height: 10rem;
+    //     background-color: rgba(160, 64, 112, 0.507);
+    // }
+
+
+
+    .card{
+        min-width: 400px;
+        max-width: 500px;
+        gap: 2rem;
+        margin-top: 1rem;
+        background-color: rgba(230, 6, 6, 0.212);
+
+
+
+        .example-header-image {
+            background-size: cover;
+        }
+
+        .fas{
+            font-size: 1.5rem;
+            display: flex;
+            justify-content: flex-end;
+            cursor: pointer;
+        }
+    }
+}
