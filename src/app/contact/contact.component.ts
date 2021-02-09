@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-contact',
@@ -8,16 +8,38 @@ import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/fo
 })
 export class ContactComponent implements OnInit {
 
-  name = new FormControl('');
-  
+  contactForm!: FormGroup;
+  submitted = false;
 
-  constructor() { }
+  constructor(private formBuilder: FormBuilder) { 
+    this.createContactForm();
+  }
   
-  updateName() {
-    this.name.setValue('Nancy');
+  createContactForm(){
+    this.contactForm = this.formBuilder.group({
+      fullName: ['',Validators.required],  
+      email: ['',[Validators.required, Validators.email]],
+      message: ['',[Validators.required, Validators.minLength(5)]]
+    });
+  }
+  
+  onSubmit() {
+    this.submitted = true;
+    console.log(this.contactForm.value)
+  } 
+
+  goback(){
+    this.contactForm.reset()
+    this.submitted = false;
   }
 
-  
+  getErrorMessage() {
+    if (this.contactForm.hasError('required')) {
+      return 'You must enter a value';
+    }
+
+    return this.contactForm.hasError('email') ? 'Not a valid email' : '';
+  }
 
   ngOnInit(): void {
   }

@@ -1,16 +1,32 @@
-<!-- <label>
-    Name:
-    <input type="text" [formControl]="name">
-  </label>
+<h1> Contact Us With Your Feedback! </h1>
+
+<div [hidden]="submitted" >
+  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" >
+    <label>Enter your name</label>
+    <input type = "text" name = "fullName" placeholder = "Marco Blake" formControlName="fullName" required >
+    <br/>
   
+    <label>Enter your email</label>
+    <input type = "email" name = "email" placeholder = "king@hotmail.com" formControlName="email" required >
+    <br/>
   
-  
-  <p>
-    Value: {{ name.value }}
-  </p>
-  
-  
-  <p>
-    <button (click)="updateName()">Update Name</button>
-  </p>
-   -->
+    <label>Enter your feedback</label>
+    <textarea ng-enter="onSubmit()" name = "message" placeholder = "Your message" formControlName="message" ></textarea>
+    <br/>
+    <button mat-raised-button color='warn' type="submit" [disabled]="!contactForm.valid">Submit</button>
+  </form>
+</div>
+
+<div [hidden]="!submitted">
+  <div class="showFeedback">
+    <h2>Your submitted the following</h2>
+    <ul>
+      <li>
+        {{this.contactForm.value.fullName}}
+      </li>
+      <li>{{this.contactForm.value.email}}</li>
+      <li>{{this.contactForm.value.message}}</li>
+    </ul>
+    <button mat-raised-button color='warn' type="button" (click)=goback()>Go Back</button>
+  </div>
+</div>
