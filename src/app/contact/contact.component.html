@@ -21,12 +21,44 @@
   <div class="showFeedback">
     <h2>Your submitted the following</h2>
     <ul>
-      <li>
-        {{this.contactForm.value.fullName}}
+      <li><h3>Name:</h3>
+        <h4>{{this.contactForm.value.fullName}}</h4>
       </li>
-      <li>{{this.contactForm.value.email}}</li>
-      <li>{{this.contactForm.value.message}}</li>
+      <li>
+        <h3>Email:</h3>
+        <h4>{{this.contactForm.value.email}}</h4>
+      </li>
+      <li>
+        <h3>Message:</h3>
+        <h4>{{this.contactForm.value.message}}</h4>
+      </li>
     </ul>
     <button mat-raised-button color='warn' type="button" (click)=goback()>Go Back</button>
   </div>
 </div>
+
+
+<div class="info">
+  
+  <mat-card>
+    <a href="https://www.google.se/maps/place/Systembolaget/@56.8793439,14.7984063,16.75z/data=!4m13!1m7!3m6!1s0x4657238ca5dbdf4f:0xb57da623c8694530!2sStorgatan+34,+352+31+V%C3%A4xj%C3%B6!3b1!8m2!3d56.8795061!4d14.800827!3m4!1s0x4657238b5091ce1d:0xe34126dd73118f62!8m2!3d56.8798199!4d14.7996636" target="_blank"><i class="far fa-map"></i></a>
+    <!-- <Address>
+      Storgatan 34
+      <br>
+      Växjö 35234
+      <br>
+      Sweden
+    </Address> -->
+  </mat-card>
+  <mat-card>
+    <a href="tel:123-456-7890p123"><i class="fas fa-phone"></i></a>
+  </mat-card>
+  <mat-card>
+    <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+  </mat-card>
+  <mat-card>
+    <i class="fab fa-instagram"></i>
+  </mat-card>
+</div>
+
+

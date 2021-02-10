@@ -11,12 +11,14 @@
             text-decoration: none;
         }
     
-        i{
-            
-        }
     
         .active{
             background-color: rgb(230, 6, 6);
+        }
+
+        i{
+            outline: none;
+            cursor: pointer;
         }
     }
 }

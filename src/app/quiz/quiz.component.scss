@@ -1,52 +1,56 @@
 .container{
-   display: flex; 
-   justify-content: center;
-}
-
-.cardlol{
-    width: 40%;
+    max-width: 640px;
+    margin: 0 auto;
+    width: 100%;
+    background: #333;
+    color: #fff;
+    padding: 1rem;
+    border-radius: 10px;
+    border: 2px solid #333;
     margin-top: 2rem;
+    
+    
+    .question{
+        text-align: center;
+    }
+
+  
+    ul{
+        list-style: none;
+        text-align: center; 
+        padding: 0;
+
+        .right{
+            background-color: green;
+        }
+
+        .wrong {
+            border: 2px solid rgb(173, 19, 13);
+        }
+        li{
+            cursor: pointer;
+            border: 1px solid white;
+            margin: 1rem 5rem;
+            padding: 1rem;
+        }
+    }
+
+    
+
+    mat-progress-bar{
+        padding-top: 1rem;
+        height: 20px;
+    }
 }
 
-mat-card-header {
-    display: block;
-  
-    .header-image {
-      margin-left: 15px;
+@media only screen and (max-width: 680px) {
+    .container{
+        max-width: 400px;
     }
-  
-    .mat-card-container {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-      .subtitle2 {
-        display: block;
-      }
+}
+
+@media only screen and (max-width: 400px) {
+    .container{
+        max-width: 300px;
     }
-  
-    .quiz-topic-img {
-      display: flex;
-      justify-content: center;
-      /* background: url('../../../assets/images/DIDiagram.png') no-repeat center center; */
-      background-size: 100% !important;
-      margin: 90px -10px 0 5px;
-      height: 300px !important;
-      width: 100% !important;
-    }
-  }
-  
-  mat-card-content p {
-    text-align: justify;
-    margin-top: -25px;
-  }
-  
-  mat-card-actions {
-    text-align: center;
-  
-    button {
-      margin-bottom: 10px !important;
-    }
-    button:hover {
-      border: 1px solid #007aff;
-    }
-  }
+}
