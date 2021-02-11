@@ -9,13 +9,14 @@ import { QuestionModel } from "../shared/question.model";
   styleUrls: ['./quiz.component.scss']
 })
 export class QuizComponent implements OnInit {
-
+  // Declare variables/state
   questions!: QuestionModel[];
   answer = false;
   num = 0;
   points = 0;
   maxquestions!: number;
-  finished = false;
+
+  // Progress bar value
   value = 0;
   
 
@@ -26,31 +27,39 @@ export class QuizComponent implements OnInit {
   }
 
   checkAnswer(answer: String, e:Event){
+    // If right answer
     if(answer === this.questions[this.num].answer){
       this.points++;
       this.value += 25;
       (e.target as HTMLElement).classList.add('right');
-      this.num++
-    }else{
+
+      setTimeout(() => {
+        this.num++
+      }, 1000);
+    }
+    // If wrong answer
+    else{
       this.value += 25;
-      this.num++
+      (e.target as HTMLElement).classList.add('wrong');
+      setTimeout(() => {
+        this.num++
+      }, 1000);
     }
-    if(this.num === 4){
-      this.finished = true;
-    }
+
   }
 
 
+  // Start game func
   start(){
+    // Get questions
     this.questionservice.getQuestion()
     .subscribe((question) => this.questions = question)
     this.maxquestions = this.questions.length
     
-    console.log(this.questions)
 
+    // Reset state
     this.num = 0;
     this.points = 0;
     this.value = 0;
-    this.finished = false;
   }
 }

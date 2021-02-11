@@ -32,7 +32,7 @@ form{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding-top: 2rem;
+    padding-top: 1rem;
     width: 50%;
     margin: 0 auto;
     margin-top: 2rem;
@@ -52,11 +52,6 @@ form{
         align-items: center;
         padding: 0;
         text-align: center;
-
-
-        li{
-            padding: .7rem 0;
-        }
 
         h4::first-letter {
             text-transform: capitalize;
@@ -106,8 +101,6 @@ form{
 
 @media only screen and (max-width: 680px) {
     form{
-        
-    
         input[type=text],
         input[type=email],
         textarea,

@@ -2,8 +2,8 @@
     max-width: 640px;
     margin: 0 auto;
     width: 100%;
-    background: #333;
-    color: #fff;
+    background: #0D5C75;
+    color: rgb(255, 255, 255);
     padding: 1rem;
     border-radius: 10px;
     border: 2px solid #333;
@@ -25,23 +25,47 @@
         }
 
         .wrong {
-            border: 2px solid rgb(173, 19, 13);
+            background-color: red;
         }
         li{
             cursor: pointer;
             border: 1px solid white;
+            border-radius: 5px;
             margin: 1rem 5rem;
             padding: 1rem;
-        }
-    }
+            transition-duration: .1s;
+            transition-timing-function: linear;
 
-    
+            &:hover{
+                transform: scale(1.1);
+                border: 2px solid yellow;
+            }
+        }
+        
+        
+    }
 
     mat-progress-bar{
         padding-top: 1rem;
         height: 20px;
     }
 }
+
+.fa-star{
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    color: gold;
+}
+
+.btn-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
 
 @media only screen and (max-width: 680px) {
     .container{

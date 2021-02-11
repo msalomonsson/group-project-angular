@@ -8,7 +8,7 @@ import { Personal } from '../shared/personal';
 })
 export class PersonalService {
 
-
+  // Func that use observable to get personal data
   getPersonal(): Observable<Personal[]>{
     return of(PERSONALS)
   }

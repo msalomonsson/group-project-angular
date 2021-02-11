@@ -1,23 +1,43 @@
-
-<div class="container" *ngIf="questions.length > 0" [hidden]="finished">
+<!-- Game container -->
+<div class="container" *ngIf="num < 4">
     <h2>Current Score: {{points}}</h2>
     <h2 >Current Question: {{questions[num].questionId}}/4</h2>
     <h2 class="question">{{questions[num].questionText}}</h2>
     <ul>
         <li *ngFor="let options of questions[num].options" (click)="checkAnswer(options.optionValue,$event)">
             {{options.optionValue}}
-            {{options.optionText}}
-            
+            {{options.optionText}}  
         </li>
     </ul>
-    
     <button mat-raised-button color="warn" (click)="start()">Restart quiz</button>
     <mat-progress-bar color='warn' mode="determinate" value="{{value}}"></mat-progress-bar>
 </div>
 
-<div class="container" [hidden]="!finished">
+<!-- Result container -->
+<div class="container"  *ngIf="num === 4">
     <h2>Woah you finished
     <hr>
     You scored {{points}}</h2>
-    <button mat-raised-button color="warn" (click)="start()" >Restart quiz</button>
+    <div *ngIf="points === 4">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+    </div>
+    <div *ngIf="points === 3">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+    </div>
+    <div *ngIf="points === 2">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+    </div>
+    <div *ngIf="points === 1">
+        <i class="fas fa-star"></i>
+    </div>
+    <div class="btn-div">
+        <button mat-raised-button color="warn" (click)="start()" >Restart quiz</button>
+    </div>
 </div>
+

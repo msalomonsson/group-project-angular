@@ -1,5 +1,6 @@
 <h1> Contact Us With Your Feedback! </h1>
 
+<!-- Feedback form -->
 <div [hidden]="submitted" >
   <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" >
     <label>Enter your name</label>
@@ -17,8 +18,9 @@
   </form>
 </div>
 
+<!-- Show Feedback container -->
 <div [hidden]="!submitted">
-  <div class="showFeedback">
+  <div class="showFeedback" >
     <h2>Your submitted the following</h2>
     <ul>
       <li><h3>Name:</h3>
@@ -38,8 +40,8 @@
 </div>
 
 
+<!-- Info container -->
 <div class="info">
-  
   <mat-card>
     <a href="https://www.google.se/maps/place/Systembolaget/@56.8793439,14.7984063,16.75z/data=!4m13!1m7!3m6!1s0x4657238ca5dbdf4f:0xb57da623c8694530!2sStorgatan+34,+352+31+V%C3%A4xj%C3%B6!3b1!8m2!3d56.8795061!4d14.800827!3m4!1s0x4657238b5091ce1d:0xe34126dd73118f62!8m2!3d56.8798199!4d14.7996636" target="_blank"><i class="far fa-map"></i></a>
     <!-- <Address>

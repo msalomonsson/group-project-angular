@@ -10,6 +10,7 @@ export class QuestionService {
 
   constructor() { }
 
+  // Func that use observable to get question data
   getQuestion(): Observable<QuestionModel[]>{
     return of (QUESTIONS)
   }

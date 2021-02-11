@@ -15,6 +15,8 @@ export class ContactComponent implements OnInit {
     this.createContactForm();
   }
   
+
+  // Create contactform with validators
   createContactForm(){
     this.contactForm = this.formBuilder.group({
       fullName: ['',Validators.required],  
@@ -23,23 +25,25 @@ export class ContactComponent implements OnInit {
     });
   }
   
+
+  // When submit func
   onSubmit() {
     this.submitted = true;
-    console.log(this.contactForm.value)
   } 
-
+  
+  // Go back btn func
   goback(){
     this.contactForm.reset()
     this.submitted = false;
   }
 
-  getErrorMessage() {
-    if (this.contactForm.hasError('required')) {
-      return 'You must enter a value';
-    }
+  // getErrorMessage() {
+  //   if (this.contactForm.hasError('required')) {
+  //     return 'You must enter a value';
+  //   }
 
-    return this.contactForm.hasError('email') ? 'Not a valid email' : '';
-  }
+  //   return this.contactForm.hasError('email') ? 'Not a valid email' : '';
+  // }
 
   ngOnInit(): void {
   }
