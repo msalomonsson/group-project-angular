@@ -1,8 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+
+@font-face {
+    font-family: NotoSansJp;
+    src: url(./assets/fonts/NotoSansJP-Regular.otf) format('truetype');
+}
+
+
+*{
+    font-family: 'NotoSansJp', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 
 html, body { height: 100%; }
 body { 
-    margin: 0; 
-    font-family: Noto, "Helvetica Neue", sans-serif;;
+    margin: 0;
 }

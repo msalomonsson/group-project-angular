@@ -25,10 +25,10 @@ export class ContactComponent implements OnInit {
     });
   }
   
-
   // When submit func
   onSubmit() {
     this.submitted = true;
+    
   } 
   
   // Go back btn func
@@ -37,14 +37,7 @@ export class ContactComponent implements OnInit {
     this.submitted = false;
   }
 
-  // getErrorMessage() {
-  //   if (this.contactForm.hasError('required')) {
-  //     return 'You must enter a value';
-  //   }
-
-  //   return this.contactForm.hasError('email') ? 'Not a valid email' : '';
-  // }
-
+  
   ngOnInit(): void {
   }
 
