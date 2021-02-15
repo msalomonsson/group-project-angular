@@ -3,22 +3,47 @@
 <!-- Feedback form -->
 <div [hidden]="submitted" >
   <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" >
-    <label [ngClass]="{'red-class': !contactForm.controls.fullName?.valid, 'green-class':contactForm.controls.fullName?.valid}">Enter your name</label>
-    <input type = "text" name = "fullName" placeholder = "Marco Blake" formControlName="fullName" required [ngClass]="{'red-class': !contactForm.controls.fullName?.valid, 'green-class':contactForm.controls.fullName?.valid}">
+    <label 
+      [ngClass]="{'red-class': !contactForm.controls.fullName?.valid, 'green-class':contactForm.controls.fullName?.valid}">
+      Enter your name
+    </label>
+
+    <input  
+    type = "text" 
+    name = "fullName" 
+    placeholder = "Marco Blake" 
+    formControlName="fullName" 
+    required 
+    [ngClass]="{'red-class': !contactForm.controls.fullName?.valid, 'green-class':contactForm.controls.fullName?.valid}">
     <br/>
   
     <label 
-    [ngClass]="{'red-class': !contactForm.controls.email?.valid, 'green-class':contactForm.controls.email?.valid}">
-      Enter your email
+    [ngClass]="{'red-class': !contactForm.controls.email?.valid, 'green-class':contactForm.controls.email?.valid}">Enter your email
     </label>
-    <input type = "email" name = "email" placeholder = "king@hotmail.com" formControlName="email" required 
+
+    <input 
+    type = "email" 
+    name = "email" 
+    placeholder = "king@hotmail.com" 
+    formControlName="email" 
+    required 
     [ngClass]="{'red-class': !contactForm.controls.email?.valid, 'green-class':contactForm.controls.email?.valid}">
     <br/>
   
-    <label [ngClass]="{'red-class': !contactForm.controls.message?.valid, 'green-class':contactForm.controls.message?.valid}">Enter your feedback</label>
-    <textarea ng-enter="onSubmit()" name = "message" placeholder = "Your message" formControlName="message" [ngClass]="{'red-class': !contactForm.controls.fullName?.valid, 'green-class':contactForm.controls.fullName?.valid}" ></textarea>
+    <label 
+      [ngClass]="{'red-class': !contactForm.controls.message?.valid, 'green-class':contactForm.controls.message?.valid}">Enter your feedback
+    </label>
+    
+    <textarea 
+    ng-enter="onSubmit()" 
+    name = "message" 
+    placeholder = "Your message" 
+    formControlName="message" 
+    [ngClass]="{'red-class': !contactForm.controls.fullName?.valid, 'green-class':contactForm.controls.fullName?.valid}" ></textarea>
     <br/>
+    
     <button mat-raised-button color='warn' type="submit" [disabled]="!contactForm.valid">Submit</button>
+
   </form>
 </div>
 
@@ -27,7 +52,8 @@
   <div class="showFeedback" >
     <h2>Your submitted the following:</h2>
     <ul>
-      <li><h3>Name:</h3>
+      <li>
+        <h3>Name:</h3>
         <h4>{{this.contactForm.value.fullName}}</h4>
       </li>
       <li>
